@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solo BRPG DM</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="inline-group">
+    <button onclick="switchView('game')">Game Window</button>
+    <button onclick="switchView('character')">Character Generator</button>
+  </nav>
+  <div id="gameWindow">
+    <h1>Solo BRPG + MUNE</h1>
+    <div id="log"></div>
+    <form id="inputForm">
+      <textarea id="userInput" placeholder="Type your action, question, or command..."></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="inline-group">
+      <button onclick="rollDice('1d20')">Roll 1d20</button>
+      <button onclick="rollDice('2d6')">Roll 2d6</button>
+      <button onclick="muneFateRoll()">Fate Roll (MUNE)</button>
+      <button onclick="generateTwist()">Generate Twist</button>
+    </div>
+  </div>
+  <div id="characterGenerator" style="display:none;">
+    <h2>Character Generator</h2>
+    <button onclick="generateCharacter()">Generate New Character</button>
+    <div class="stat-block" id="charStats"></div>
+    <div class="stat-block">
+      <label for="raceSelect">Race:</label>
+      <select id="raceSelect"></select>
+      <label for="classSelect">Class:</label>
+      <select id="classSelect"></select>
+    </div>
+    <p id="hpDisplay"></p>
+    <p id="acDisplay"></p>
+    <p id="goldDisplay"></p>
+    <p id="gearDisplay"></p>
+  </div>
+  <script>
+  window.logMessage = function (msg) {
+    let log = document.getElementById('log');
+    if (!log) {
+      log = document.createElement('div');
+      log.id = 'log';
+      log.style = 'background:#111;padding:1rem;color:#fff;white-space:pre-wrap;';
+      document.body.prepend(log);
+    }
+    const p = document.createElement('p');
+    p.textContent = msg;
+    log.appendChild(p);
+  };
+
+  window.onerror = function (msg, src, lineno, colno, err) {
+    logMessage(`[BOOT EXCEPTION] ${msg} at ${lineno}:${colno}`);
+  };
+  </script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

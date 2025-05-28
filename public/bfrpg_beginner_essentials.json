@@ -1,0 +1,673 @@
+{
+  "abilities": {
+    "modifiers": {
+      "3": -3,
+      "4": -2,
+      "5": -2,
+      "6": -1,
+      "7": -1,
+      "8": -1,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 2,
+      "17": 2,
+      "18": 3
+    }
+  },
+  "races": {
+    "Dwarf": {
+      "requirements": {
+        "CON": ">=9",
+        "CHA": "<=17"
+      },
+      "classes": [
+        "Cleric",
+        "Fighter",
+        "Thief"
+      ],
+      "special": {
+        "darkvision": "60'",
+        "construction_detection": "1-2 on d6",
+        "save_bonuses": {
+          "Death Ray or Poison": 4,
+          "Magic Wands": 4,
+          "Paralysis or Petrify": 4,
+          "Dragon Breath": 3,
+          "Spells": 4
+        }
+      },
+      "languages": [
+        "Common",
+        "Dwarvish"
+      ]
+    },
+    "Elf": {
+      "requirements": {
+        "INT": ">=9",
+        "CON": "<=17"
+      },
+      "classes": [
+        "Cleric",
+        "Fighter",
+        "Magic-User",
+        "Thief",
+        "Fighter/Magic-User",
+        "Magic-User/Thief"
+      ],
+      "special": {
+        "darkvision": "60'",
+        "secret_door_detection": "1-2 on 1d6 (1 on cursory look)",
+        "ghoul_immunity": true,
+        "surprise_reduction": 1
+      },
+      "save_bonuses": {
+        "Magic Wands": 2,
+        "Paralysis or Petrify": 1,
+        "Spells": 2
+      },
+      "languages": [
+        "Common",
+        "Elvish"
+      ]
+    },
+    "Halfling": {
+      "requirements": {
+        "DEX": ">=9",
+        "STR": "<=17"
+      },
+      "classes": [
+        "Cleric",
+        "Fighter",
+        "Thief"
+      ],
+      "special": {
+        "ranged_bonus": 1,
+        "ac_bonus_vs_larger": 2,
+        "initiative_bonus": 1,
+        "hide_outdoor": 90,
+        "hide_indoor": 70
+      },
+      "save_bonuses": {
+        "Death Ray or Poison": 4,
+        "Magic Wands": 4,
+        "Paralysis or Petrify": 4,
+        "Dragon Breath": 3,
+        "Spells": 4
+      },
+      "languages": [
+        "Common",
+        "Halfling"
+      ]
+    },
+    "Human": {
+      "requirements": {},
+      "classes": [
+        "Cleric",
+        "Fighter",
+        "Magic-User",
+        "Thief"
+      ],
+      "special": {
+        "xp_bonus": "10%"
+      },
+      "save_bonuses": {},
+      "languages": [
+        "Common"
+      ]
+    }
+  },
+  "classes": {
+    "Cleric": {
+      "prime_requisite": "WIS",
+      "min_score": 9,
+      "hit_die": "d6",
+      "weapons": [
+        "club",
+        "mace",
+        "maul",
+        "quarterstaff",
+        "sling",
+        "warhammer"
+      ],
+      "armor": "Any",
+      "shields_allowed": true,
+      "xp_for_level_2": 1500,
+      "spells_at_level_1": 0,
+      "special": [
+        "Turn Undead"
+      ],
+      "saving_throws": {
+        "Death Ray or Poison": 11,
+        "Magic Wands": 12,
+        "Paralysis or Petrify": 14,
+        "Dragon Breath": 16,
+        "Spells": 15
+      }
+    },
+    "Fighter": {
+      "prime_requisite": "STR",
+      "min_score": 9,
+      "hit_die": "d8",
+      "weapons": "Any",
+      "armor": "Any",
+      "shields_allowed": true,
+      "xp_for_level_2": 2000,
+      "spells_at_level_1": 0,
+      "special": [],
+      "saving_throws": {
+        "Death Ray or Poison": 12,
+        "Magic Wands": 13,
+        "Paralysis or Petrify": 14,
+        "Dragon Breath": 15,
+        "Spells": 17
+      }
+    },
+    "Magic-User": {
+      "prime_requisite": "INT",
+      "min_score": 9,
+      "hit_die": "d4",
+      "weapons": [
+        "cudgel",
+        "dagger",
+        "walking staff"
+      ],
+      "armor": "None",
+      "shields_allowed": false,
+      "xp_for_level_2": 2500,
+      "spells_at_level_1": 1,
+      "special": [],
+      "saving_throws": {
+        "Death Ray or Poison": 13,
+        "Magic Wands": 14,
+        "Paralysis or Petrify": 13,
+        "Dragon Breath": 16,
+        "Spells": 15
+      }
+    },
+    "Thief": {
+      "prime_requisite": "DEX",
+      "min_score": 9,
+      "hit_die": "d4",
+      "weapons": "Any",
+      "armor": "Leather",
+      "shields_allowed": false,
+      "xp_for_level_2": 1250,
+      "spells_at_level_1": 0,
+      "special": [
+        "Sneak Attack",
+        "Thief Abilities"
+      ],
+      "saving_throws": {
+        "Death Ray or Poison": 13,
+        "Magic Wands": 14,
+        "Paralysis or Petrify": 13,
+        "Dragon Breath": 16,
+        "Spells": 15
+      },
+      "thief_abilities": {
+        "Open Locks": "25%",
+        "Remove Traps": "20%",
+        "Pick Pockets": "30%",
+        "Move Silently": "25%",
+        "Climb Walls": "80%",
+        "Hide": "10% (Halflings use 10% outdoor, 30% indoor)",
+        "Listen": "30%"
+      }
+    }
+  },
+  "equipment": {
+    "armor": {
+      "None": {
+        "cost": 0,
+        "weight": 0,
+        "ac": 11
+      },
+      "Leather": {
+        "cost": 20,
+        "weight": 15,
+        "ac": 13
+      },
+      "Chain Mail": {
+        "cost": 60,
+        "weight": 40,
+        "ac": 15
+      },
+      "Plate Mail": {
+        "cost": 300,
+        "weight": 50,
+        "ac": 17
+      },
+      "Shield": {
+        "cost": 7,
+        "weight": 5,
+        "ac_bonus": 1
+      }
+    },
+    "weapons": {
+      "Dagger": {
+        "cost": 2,
+        "weight": 1,
+        "damage": "1d4",
+        "size": "S"
+      },
+      "Hand Axe": {
+        "cost": 4,
+        "weight": 5,
+        "damage": "1d6",
+        "size": "S"
+      },
+      "Longsword": {
+        "cost": 10,
+        "weight": 4,
+        "damage": "1d8",
+        "size": "M"
+      },
+      "Warhammer": {
+        "cost": 4,
+        "weight": 6,
+        "damage": "1d6",
+        "size": "S"
+      },
+      "Quarterstaff": {
+        "cost": 2,
+        "weight": 4,
+        "damage": "1d6",
+        "size": "L"
+      }
+    }
+  },
+  "spells": {
+    "Magic-User": {
+      "1": [
+        {
+          "name": "Magic Missile",
+          "range": "100'+10'/level",
+          "duration": "instantaneous",
+          "description": "Unerring missile for 1d6+1 dmg."
+        },
+        {
+          "name": "Sleep",
+          "range": "90'",
+          "duration": "5 rounds/level",
+          "description": "Puts creatures with 3 HD or less to sleep."
+        },
+        {
+          "name": "Charm Person",
+          "range": "30'",
+          "duration": "special",
+          "description": "Target of 4 HD or less sees caster as friend. Save negates. Commands must be simple; new save daily/week/month based on INT."
+        },
+        {
+          "name": "Detect Magic",
+          "range": "60'",
+          "duration": "2 turns",
+          "description": "See magic items or creatures with glowing aura. Invisibility shows as misty glow."
+        },
+        {
+          "name": "Floating Disc",
+          "range": "0",
+          "duration": "5 turns +1/level",
+          "description": "Magical platform follows caster. Holds up to 500 lbs, disappears if >10' away."
+        },
+        {
+          "name": "Hold Portal",
+          "range": "100'+10'/level",
+          "duration": "1 round/level",
+          "description": "Secures a door or window. Knock or Dispel Magic bypasses."
+        },
+        {
+          "name": "Light*",
+          "range": "120'",
+          "duration": "6 turns +1/level",
+          "description": "Illuminates 30' radius. Can blind if targeted. Reversible as Darkness."
+        },
+        {
+          "name": "Magic Mouth",
+          "range": "30'",
+          "duration": "special",
+          "description": "Imprints a voice trigger on object. Speaks when triggered by sight/sound."
+        },
+        {
+          "name": "Protection from Evil*",
+          "range": "touch",
+          "duration": "1 turn/level",
+          "description": "+2 AC/save vs evil; repels evil creatures; blocks charm/possession. Reversible."
+        },
+        {
+          "name": "Read Languages",
+          "range": "0",
+          "duration": "special",
+          "description": "Read any non-magical language. Does not speed reading or translate concepts."
+        },
+        {
+          "name": "Read Magic",
+          "range": "0",
+          "duration": "permanent",
+          "description": "Read magical text like spellbooks or scrolls. All Magic-Users begin with this."
+        },
+        {
+          "name": "Shield",
+          "range": "self",
+          "duration": "5 rounds +1/level",
+          "description": "Blocks Magic Missiles, +3 AC melee, +6 AC missiles (front only)."
+        },
+        {
+          "name": "Ventriloquism",
+          "range": "60'",
+          "duration": "1 turn/level",
+          "description": "Projects voice to nearby object. Can change location or pause speech."
+        }
+      ]
+    },
+    "Cleric": {
+      "1": [
+        {
+          "name": "Light",
+          "range": "120'",
+          "duration": "6 turns +1/level",
+          "description": "Creates light like a torch."
+        },
+        {
+          "name": "Light*",
+          "range": "120'",
+          "duration": "6 turns +1/level",
+          "description": "Illuminates 30' radius. Can blind if targeted. Reversible as Darkness."
+        },
+        {
+          "name": "Detect Magic",
+          "range": "60'",
+          "duration": "2 turns",
+          "description": "See magical auras on objects or creatures."
+        },
+        {
+          "name": "Protection from Evil*",
+          "range": "touch",
+          "duration": "1 turn/level",
+          "description": "Same as Magic-User version. Reversible as Protection from Good."
+        }
+      ]
+    }
+  },
+  "movement_encumbrance": {
+    "load_by_strength": {
+      "Dwarf_Elf_Human": {
+        "3": {
+          "light": 25,
+          "heavy": 60
+        },
+        "4-5": {
+          "light": 35,
+          "heavy": 90
+        },
+        "6-8": {
+          "light": 50,
+          "heavy": 120
+        },
+        "9-12": {
+          "light": 60,
+          "heavy": 150
+        },
+        "13-15": {
+          "light": 65,
+          "heavy": 165
+        },
+        "16-17": {
+          "light": 70,
+          "heavy": 180
+        },
+        "18": {
+          "light": 80,
+          "heavy": 195
+        }
+      },
+      "Halfling": {
+        "3": {
+          "light": 20,
+          "heavy": 40
+        },
+        "4-5": {
+          "light": 30,
+          "heavy": 60
+        },
+        "6-8": {
+          "light": 40,
+          "heavy": 80
+        },
+        "9-12": {
+          "light": 50,
+          "heavy": 100
+        },
+        "13-15": {
+          "light": 55,
+          "heavy": 110
+        },
+        "16-17": {
+          "light": 60,
+          "heavy": 120
+        },
+        "18": {
+          "light": 65,
+          "heavy": 130
+        }
+      }
+    },
+    "movement_by_armor": {
+      "No Armor or Magic Leather": {
+        "light": "40'",
+        "heavy": "30'"
+      },
+      "Leather Armor or Magic Metal": {
+        "light": "30'",
+        "heavy": "20'"
+      },
+      "Metal Armor": {
+        "light": "20'",
+        "heavy": "10'"
+      }
+    },
+    "wilderness_movement": {
+      "10'": 6,
+      "20'": 12,
+      "30'": 18,
+      "40'": 24,
+      "50'": 30,
+      "60'": 36,
+      "70'": 42,
+      "80'": 48
+    },
+    "terrain_adjustments": {
+      "Jungle, Mountains, Swamp": "x1/3",
+      "Desert, Forest, Hills": "x2/3",
+      "Clear, Plains, Trail": "x1",
+      "Road (Paved)": "x1 1/3"
+    },
+    "forced_march": {
+      "effect": "add 50% distance on first day; 1d6 damage/day after",
+      "save": "Save vs Death Ray with CON bonus to avoid"
+    }
+  },
+  "survival": {
+    "food": {
+      "requirement": "1 day's ration",
+      "effects": "Lose 1 HP/day after 2 days without food; can't heal naturally"
+    },
+    "water": {
+      "requirement": "1 quart/day",
+      "effects": "Lose 1d4 HP/day starting after 1 day; no natural healing"
+    },
+    "sleep": {
+      "requirement": "6 hrs - CON bonus",
+      "effects": "-1 attack/save per night without sleep"
+    }
+  },
+  "combat": {
+    "round_time": "10 seconds",
+    "initiative": "1d6 + DEX bonus (-1 deafened, -2 blinded)",
+    "actions": {
+      "standard_attack": "Move + Melee/Ranged Attack",
+      "run": "2x move, no attack",
+      "charge": "2x move + attack (+2), -2 AC for round",
+      "parting_shot": "+2 attack vs fleeing enemy",
+      "fighting_withdrawal": "Half move + attack"
+    },
+    "special_rules": {
+      "reach_attack": "Spears and similar may attack closing opponents",
+      "surprise": "Usually 1-2 on d6; Elves only surprised on 1"
+    },
+    "attack_modifiers": {
+      "from_behind": "+2",
+      "flat_blade": "-4, 50% damage",
+      "punch": "+0, 1d3 subduing",
+      "kick": "-2, 1d4 subduing",
+      "invisible": "+4/-4",
+      "blinded": "-4/+4",
+      "pinned": "+4"
+    },
+    "missile_ranges": {
+      "Shortbow": {
+        "short": 50,
+        "medium": 100,
+        "long": 150
+      },
+      "Longbow": {
+        "short": 70,
+        "medium": 140,
+        "long": 210
+      },
+      "Sling": {
+        "short": 30,
+        "medium": 60,
+        "long": 90
+      }
+    },
+    "cover_penalties": {
+      "25%": {
+        "cover": -2,
+        "conceal": -1
+      },
+      "50%": {
+        "cover": -4,
+        "conceal": -2
+      },
+      "75%": {
+        "cover": -6,
+        "conceal": -3
+      },
+      "90%": {
+        "cover": -8,
+        "conceal": -4
+      }
+    },
+    "grenade_miss_chart": {
+      "1": "Front left",
+      "2": "Front",
+      "3": "Front right",
+      "4": "Right",
+      "5": "Direct hit (target)",
+      "6": "Left",
+      "7": "Rear left",
+      "8": "Rear",
+      "9": "Rear right",
+      "0": "Backwards"
+    },
+    "sequence": [
+      "Check for surprise (1d6, usually 1-2; Elves on 1)",
+      "Check monster reaction (optional, 2d6 table)",
+      "Roll initiative (1d6 + modifiers)",
+      "Act in initiative order: move + attack, move only, attack only, or cast spell",
+      "Resolve attacks (d20 + mods vs. AC, then roll damage)",
+      "Continue combat rounds until encounter is resolved"
+    ],
+    "brawling": {
+      "punch": {
+        "attack_mod": 0,
+        "damage": "1d3 subduing"
+      },
+      "kick": {
+        "attack_mod": -2,
+        "damage": "1d4 subduing"
+      },
+      "restrictions": "Cannot brawl vs. metal armor unless attacker has special ability",
+      "armor_restriction": "Characters in no or leather armor can attempt brawling"
+    }
+  },
+  "npc_interaction": {
+    "reaction_roll": {
+      "mechanics": "2d6, modified by Charisma",
+      "results": {
+        "2-3": "Hostile, attacks",
+        "4-6": "Unfriendly, may attack",
+        "7-9": "Neutral, uncertain",
+        "10-11": "Friendly, helpful",
+        "12": "Enthusiastic ally"
+      }
+    },
+    "morale_check": {
+      "mechanics": "2d6 vs. monster's morale score",
+      "trigger": [
+        "First death in group",
+        "Group reduced to 50% or fewer members",
+        "Leader killed"
+      ],
+      "result": "Fail = flee or surrender"
+    }
+  },
+  "turn_undead": {
+    "levels": [
+      "Skeleton",
+      "Zombie",
+      "Ghoul",
+      "Shadow",
+      "Wight",
+      "Wraith",
+      "Mummy"
+    ],
+    "Cleric_Level_1": [
+      "11",
+      "13",
+      "15",
+      "17",
+      "-",
+      "-",
+      "-"
+    ]
+  },
+  "experience": {
+    "Cleric": {
+      "level_2": 1500
+    },
+    "Fighter": {
+      "level_2": 2000
+    },
+    "Magic-User": {
+      "level_2": 2500
+    },
+    "Thief": {
+      "level_2": 1250
+    }
+  },
+  "wounds_healing_death": {
+    "healing": {
+      "natural_healing": "1 HP per day with full rest (6 hrs sleep or more)",
+      "bed_rest_bonus": "+1 HP per evening with full bed rest"
+    },
+    "death": {
+      "0_hp": "Character is dead, unless subduing damage",
+      "subduing_damage": "Unconscious at 0 HP, awaken at 1 HP in 1d4 turns or 2d10 rounds if aided"
+    },
+    "revival": {
+      "healing_magic": "Still works when starved, dehydrated, or wounded",
+      "raise_dead": "Only possible via high-level Cleric; GM discretion"
+    }
+  },
+  "encumbrance_penalties": {
+    "light_load": "Use listed movement rate by armor type",
+    "heavy_load": "Reduces movement as per armor category (e.g., 40' -> 30')",
+    "combat_penalty": "None directly, but slower characters may be disadvantaged in initiative and travel"
+  }
+}
