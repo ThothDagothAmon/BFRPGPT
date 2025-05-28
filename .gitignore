@@ -6,7 +6,4 @@ dist/
 .cache/
 *.zip
 .git-credentials
-.gitignore
-package.json
 package-lock.json
-node_modules
