@@ -1,5 +1,12 @@
-node_modules
+node_modules/
+dist/
+.env
+*.log
+*.swp
+.cache/
+*.zip
+.git-credentials
+.gitignore
 package.json
 package-lock.json
-.gitignore
-
+node_modules
